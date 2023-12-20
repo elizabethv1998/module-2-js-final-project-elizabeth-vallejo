@@ -1,17 +1,100 @@
-canvas {border: 1px solid black;}
+body {
+    overflow: hidden;
+}
+#flyingCtn {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(253, 121, 6);
+    border-radius: 50%;
+    z-index: 1;
+    animation: flyingBasket 5s linear infinite;
+}
+@keyframes flyingBasket  {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-200px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
+
+#startCtn {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+opacity: 1;
+transition: opacity 0.5s ease-in-out;
+}
+#playbtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#canvasCtn {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+position: relative;
+}
+
+
+canvas {
+    border: 1px solid black;
+    width: 600px; height: 600px;
+
+}
 #hoop {
 display: none;
 }
 
-/*incase i want to use modal instead of alert 
-#customModal {
+.modal-container {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 200px;
+    background: transparent;
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-} */
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    justify-content: space-around;
+    z-index: 2;
+}
+
+
+
+.modal-content {
+    justify-content: space-around;
+    background: transparent;
+    padding: 20px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+}
+
+#basketball {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
